@@ -21,6 +21,10 @@ public class Node<T> {
 		return data;
 	}
 	
+	public void setData(T d) {
+		this.data = d;
+	}
+	
 	public Node<T> getNext() {
 		return next;
 	}

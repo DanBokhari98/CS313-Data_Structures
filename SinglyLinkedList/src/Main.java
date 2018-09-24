@@ -29,6 +29,32 @@ public class Main {
 		removeMiddle(test);
 		test.printList();
 		
+		System.out.println();
+		System.out.println();
+		System.out.println();
+		Node<Integer> node = new Node<>();
+		node.setData(1);
+		System.out.print(node.getData() + "-->");
+		node.setNext(node.getNext());
+		node.setData(4);
+		System.out.print(node.getData() + "-->");
+		node.setNext(node.getNext());
+		node.setData(3);
+		System.out.print(node.getData() + "-->");
+		node.setNext(node.getNext());
+		node.setData(2);
+		System.out.print(node.getData() + "-->");
+		System.out.println();
+		
+		try {
+			System.out.println(test.lastButOne().getData());
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		
 	}
 	public static void moveZeros(LinkedList<Integer> l) {
 		//initialize a new Node to reference the list head

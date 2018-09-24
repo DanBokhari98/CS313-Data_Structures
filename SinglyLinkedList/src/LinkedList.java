@@ -79,6 +79,17 @@ public class LinkedList<T> {
 		return ans;
 	}
 	
+	public Node<T> lastButOne()throws Exception{
+		if(head == tail) throw new Exception("No such node");
+		Node<T> p = head;
+		while(p.getNext() != tail) {
+			if(p.getNext() == tail) return p;
+			
+			p = p.getNext();
+		}
+		return p;
+	}
+	
 	 public void printList() 
 	    { 
 	        Node<T> tnode = head; 

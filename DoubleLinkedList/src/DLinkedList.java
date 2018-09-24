@@ -1,3 +1,4 @@
+import javax.xml.soap.Node;
 
 public class DLinkedList<T> {
 	
@@ -74,5 +75,37 @@ public class DLinkedList<T> {
 		u.setNext(w);
 		size--;
 		return v.getData();
+	}
+	
+	public T removeAfter(DNode<T> v) throws Exception{
+		if(v.getNext() == trailer || v == trailer)throw new Exception("Cant do that");
+		DNode<T> w = v.getNext().getNext();
+		DNode<T> u = v.getPrev();
+		w.setPrev(v);
+		v.setNext(w);
+		size--;
+		return v.getData();
+	}
+	
+	public T removeBefore(DNode<T> v) throws Exception{
+		if(v == header || v == trailer) throw new Exception("CANT DO THAT");
+		if(v.getPrev() == header) throw new Exception("Only node available");
+		DNode<T> w = v.getPrev().getPrev();
+		w.setNext(v);
+		v.setPrev(w);
+		size--;
+		return v.getData();
+	}
+	
+	public void printList() {
+		DNode<T> p = header.getNext();
+		while(p != null) {
+			if(p.getData() == null) {
+				break;
+			}
+			System.out.print(p.getData() + " <--> ");
+			p = p.getNext();
+			
+		}
 	}
 }
