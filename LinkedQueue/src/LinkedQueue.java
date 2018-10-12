@@ -15,12 +15,23 @@ public class LinkedQueue<T> implements Queue<T> {
 	}
 
 	
+	public boolean isEmpty() {
+		return size == 0;
+	}
+	
+	
+	public int size() {
+		return size;
+	}
+	
 	@Override
 	public T dequeue() throws Exception {
-		if(front == tail && tail == null) throw new Exception("hehe");
+		if(isEmpty()) throw new Exception("hehe");
 		T answer = front.getData();
 		front = front.getNext();
 		size--;
+		if(front == null) 
+			tail = front;
 		return answer;
 	}
 
